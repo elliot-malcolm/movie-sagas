@@ -2,6 +2,19 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool')
 
+//GET request to pull data to dom (THEN to SAGA and reducer) (then Display To DOM)
+router.get('/', (req, res) => {
+  console.log(req.body);
+  const queryText = `SELECT * FROM "movies";`;
+
+  pool.query(queryText).then(result => {
+    res.send(result.rows);  
+  }).catch(error => {
+    console.log(error);
+    res.sendStatus(500);
+  });
+});
+
 router.post('/', (req, res) => {
   console.log(req.body);
   // RETURNING "id" will give us back the id of the created movie
@@ -38,18 +51,5 @@ router.post('/', (req, res) => {
     res.sendStatus(500)
   })
 })
-
-//GET request to pull data to dom (THEN to SAGA and reducer) (then Display To DOM)
-router.get('/', (req, res) => {
-  console.log(req.body);
-  const queryText = `SELECT * FROM "movies";`;
-
-  pool.query(queryText).then(result => {
-    res.send(result.rows);  
-  }).catch(error => {
-    console.log(error);
-    res.sendStatus(500);
-  });
-});
 
 module.exports = router;

@@ -12,6 +12,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Movies!</h1>
+        <HomeListPage/>
         <Router>
           {/* ADD PAGES! */}
         </Router>
