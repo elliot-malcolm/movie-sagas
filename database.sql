@@ -18,7 +18,6 @@ CREATE TABLE "genres" (
 -- Recall that this Junction Table will just be a table of ids!
 
 
-
 --------[ DATA! ]---------
 
 -- starter movies

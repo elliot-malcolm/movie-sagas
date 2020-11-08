@@ -10,9 +10,17 @@ import logger from 'redux-logger';
 // Import saga middleware
 import createSagaMiddleware from 'redux-saga';
 
+import { put, takeEvery } from 'redux-saga/effects'
+
 // Create the rootSaga generator function
 function* rootSaga() {
+    yield takeEvery ('SET_MOVIES', getMovies)
+}
 
+
+// getMovies Saga
+function* getMovies(){
+    console.log('hello');
 }
 
 // Create sagaMiddleware
@@ -27,6 +35,8 @@ const movies = (state = [], action) => {
             return state;
     }
 }
+
+// build Details reducer for single movie + Details SAGA for GET request + Display on Details Page
 
 // Used to store the movie genres
 const genres = (state = [], action) => {

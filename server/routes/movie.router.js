@@ -39,4 +39,17 @@ router.post('/', (req, res) => {
   })
 })
 
+//GET request to pull data to dom (THEN to SAGA and reducer) (then Display To DOM)
+router.get('/', (req, res) => {
+  console.log(req.body);
+  const queryText = `SELECT * FROM "movies";`;
+
+  pool.query(queryText).then(result => {
+    res.send(result.rows);  
+  }).catch(error => {
+    console.log(error);
+    res.sendStatus(500);
+  });
+});
+
 module.exports = router;
