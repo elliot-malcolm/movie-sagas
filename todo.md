@@ -10,10 +10,10 @@ Details Page
     [x] Button to route to List/Home page
 
 Add Movie Page
-    [] an input field (for the movie title)
-    [] an input field (for the movie poster image URL))
-    [] a textarea (for the movie description)
-    [] a dropdown (for the genres)
+    [x] an input field (for the movie title)
+    [x] an input field (for the movie poster image URL))
+    [x] a textarea (for the movie description)
+    [x] a dropdown (for the genres)
 
 
 ### Home / List Page

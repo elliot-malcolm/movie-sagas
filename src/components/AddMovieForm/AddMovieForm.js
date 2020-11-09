@@ -61,7 +61,7 @@ handleSubmit = (event) => {
               <textarea cols='20' rows='20' name='description' placeholder='Film Description' onChange={event => this.handleChange(event, 'description')}/>
           </div>
           <br></br>
-          <button onClick={this.submit}>Add Film</button>
+          <button onClick={this.submit}>Save</button>
           <br></br>
           <br></br>
           <button onClick={this.handleCancel}>Cancel</button>
