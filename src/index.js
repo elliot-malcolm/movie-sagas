@@ -15,13 +15,14 @@ import { put, takeEvery } from 'redux-saga/effects'
 
 // Create the rootSaga generator function
 function* rootSaga() {
-    yield takeEvery ('FETCH_MOVIES', getMovies)
+    yield takeEvery ('FETCH_MOVIES', fetchMovies)
+    yield takeEvery ('FETCH_GENRES', fetchGenres)
     yield takeEvery ('FETCH_A_MOVIE', getSelectedMovie)
 }
 
 
 // getMovies Saga
-function* getMovies(){
+function* fetchMovies(){
     try{
     const movieArray = yield axios.get('/api/movie');
     yield put({type: 'SET_MOVIES', payload: movieArray.data});
@@ -30,11 +31,22 @@ function* getMovies(){
     }
 }
 
+// getGenres Saga
+function* fetchGenres() {
+    try {
+        const genresArray = yield axios.get('/api/genre');
+        yield put({type: 'SET_GENRES', payload: genresArray.data});
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 // getSelectedMovie Saga
 function* getSelectedMovie (action) {
     console.log('in SelectedMovie', action.payload);
     try{
         const selectedMovie = yield axios.get(`/api/details/${action.payload}`);
+        console.log(selectedMovie);
         yield put({type: 'SET_A_MOVIE', payload: selectedMovie.data});
         } catch (error) {
         console.log('fetch error', error); 
