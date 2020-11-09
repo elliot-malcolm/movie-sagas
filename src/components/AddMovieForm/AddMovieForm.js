@@ -32,13 +32,14 @@ handleChange = (event, input) => {
 
 handleSubmit = (event) => {
   event.preventDefault();
-  this.props.dispatch({type: 'ADD_MOVIE', payload: this.state});
+  this.props.dispatch({type: 'ADD_A_MOVIE', payload: this.state});
+  event.target.reset();
 }
 
     render() {
       return (
         <>  
-        <h1>Add A Movie!</h1>
+        <h2>Add A Movie!</h2>
         <form className='inputForm' onSubmit={event => this.handleSubmit(event)}>
           <label htmlFor='title'>Title</label>
           <input required type='text' placeholder='Film Title' onChange={event => this.handleChange(event, 'title')}/>
