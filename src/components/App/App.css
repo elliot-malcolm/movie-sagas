@@ -40,3 +40,6 @@
     left: 80%;
     position: sticky;
   }
+
+  textarea { vertical-align: top; }
+

@@ -17,11 +17,11 @@ import { put, takeEvery } from 'redux-saga/effects'
 function* rootSaga() {
     yield takeEvery ('FETCH_MOVIES', fetchMovies)
     yield takeEvery ('FETCH_GENRES', fetchGenres)
-    yield takeEvery ('FETCH_A_MOVIE', getSelectedMovie)
+    yield takeEvery ('FETCH_A_MOVIE', fetchSelectedMovie)
+    yield takeEvery ('ADD_A_MOVIE', addMovie)
 }
 
-
-// getMovies Saga
+// fetchMovies Saga
 function* fetchMovies(){
     try{
     const movieArray = yield axios.get('/api/movie');
@@ -31,7 +31,7 @@ function* fetchMovies(){
     }
 }
 
-// getGenres Saga
+// fetchGenres Saga
 function* fetchGenres() {
     try {
         const genresArray = yield axios.get('/api/genre');
@@ -41,8 +41,18 @@ function* fetchGenres() {
     }
 }
 
-// getSelectedMovie Saga
-function* getSelectedMovie (action) {
+// addMovie Saga
+function* addMovie(action) {
+    try {
+        console.log('addMovie saga, payload:', action.payload);
+        yield axios.post(`/api/movie`, action.payload);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+// fetchSelectedMovie Saga
+function* fetchSelectedMovie (action) {
     console.log('in SelectedMovie', action.payload);
     try{
         const selectedMovie = yield axios.get(`/api/details/${action.payload}`);
