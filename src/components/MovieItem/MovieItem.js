@@ -6,14 +6,12 @@ import './MovieItem.css'
 
 class MovieItem extends Component {
 
-// route = () =>{
-//     this.routeDetailsPage();
-// }
-
-// submitMovieForDetails = () => {
-//     //notate movie to GET info for // pass idParam 
-//     this.routeDetailsPage();
-// }
+submitMovieForDetails = () => {
+    this.props.dispatch({
+        type: 'FETCH_A_MOVIE', payload: this.props.movie.id
+    })
+    this.routeDetailsPage();
+    }
 
 routeDetailsPage = () => {
     this.props.history.push('/details');

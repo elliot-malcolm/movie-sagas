@@ -28,10 +28,6 @@ addMovie = () => {
             })}
         </div>
         <button onClick={this.addMovie}>Add A Movie!</button>
-
-
-
-        {/* {JSON.stringify(this.props.reduxState)} */}
         </>
       );
     };
