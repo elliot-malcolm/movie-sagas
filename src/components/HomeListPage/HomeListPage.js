@@ -13,7 +13,7 @@ componentDidMount(){
     this.displayMovies();
 }
 
-addMovie = () => {
+addMovieroute = () => {
     this.props.history.push('/addmovie');
 }
 
@@ -27,7 +27,7 @@ addMovie = () => {
                 )
             })}
         </div>
-        <button onClick={this.addMovie}>Add A Movie!</button>
+        <button onClick={this.addMovieroute}>Add A Movie!</button>
         </>
       );
     };
