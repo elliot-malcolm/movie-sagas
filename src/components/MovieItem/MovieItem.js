@@ -23,7 +23,7 @@ routeDetailsPage = () => {
         return (
             <div>
                 <h2>{this.props.movie.title}</h2>
-                <button onClick={this.routeDetailsPage}><img src={this.props.movie.poster}></img><br></br>(click for more details)</button>
+                <button onClick={this.routeDetailsPage}><img src={this.props.movie.poster} alt={this.props.movie.title}></img><br></br>(click for more details)</button>
                 <br></br>
                 {/* {this.props.movie.description} */}
             </div>

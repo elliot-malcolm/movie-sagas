@@ -3,6 +3,7 @@ const router = express.Router();
 const pool = require('../modules/pool')
 
 //GET request to pull data to dom (THEN to SAGA and reducer) (then Display To DOM)
+
 router.get('/', (req, res) => {
   console.log(req.body);
   const queryText = `SELECT * FROM "movies";`;

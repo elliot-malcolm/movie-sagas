@@ -15,12 +15,13 @@ import { put, takeEvery } from 'redux-saga/effects'
 
 // Create the rootSaga generator function
 function* rootSaga() {
-    yield takeEvery ('FETCH_MOVIES', setMovies)
+    yield takeEvery ('FETCH_MOVIES', getMovies)
+    // yield takeEvery ('FETCH_A_MOVIE', getAMovie)
 }
 
 
 // getMovies Saga
-function* setMovies(){
+function* getMovies(){
     try{
     const movieArray = yield axios.get('/api/movie');
     yield put({type: 'SET_MOVIES', payload: movieArray.data});
@@ -28,6 +29,17 @@ function* setMovies(){
     console.log(error);
     }
 }
+
+// getAMovie Saga
+// function* getAMovie(){
+//     try{
+//         const selectedMovie = yield axios.get('/api/details');
+//         yield put({type: 'SET_A_MOVIE', payload: selectedMovie.data});
+//         } catch (error) {
+//         console.log(error);
+//         }
+// }
+
 
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
@@ -43,6 +55,8 @@ const movies = (state = [], action) => {
 }
 
 // build Details reducer for single movie + 
+
+
 // Details SAGA for GET request + Display on Details Page
 
 // Used to store the movie genres

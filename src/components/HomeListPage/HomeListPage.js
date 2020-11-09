@@ -20,13 +20,13 @@ addMovie = () => {
     render() {
       return (
         <>  
-        <ul>
+        <div className="movieItem">
             {this.props.reduxState.movies.map((movie) => {
                 return (
                     <li className='movieItem' key={movie.id}><MovieItem movie={movie}/></li>
                 )
             })}
-        </ul>
+        </div>
         <button onClick={this.addMovie}>Add A Movie!</button>
 
 
