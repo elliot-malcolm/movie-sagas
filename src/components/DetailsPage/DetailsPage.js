@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './DetailsPage.css'
+
 
 class DetailsPage extends Component {
 

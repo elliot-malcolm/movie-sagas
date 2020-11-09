@@ -6,9 +6,8 @@ Home/List Page
     [x] Button to route to "Details" page and specify movie to GET Info for 
 
 Details Page
-    [] GET Info for movie clicked
-    [] Button to route to List/Home page
-    // build Details reducer for single movie + Details SAGA for GET request + Display on Details Page
+    [x] GET Info for movie clicked
+    [x] Button to route to List/Home page
 
 Add Movie Page
     [] an input field (for the movie title)

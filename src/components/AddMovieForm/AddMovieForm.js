@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-class AddMoviePage extends Component {
+class AddMovieForm extends Component {
 
     render() {
       return (
@@ -16,4 +16,4 @@ class AddMoviePage extends Component {
     reduxState
   })
   
-  export default connect(mapStateToProps)(AddMoviePage);
+  export default connect(mapStateToProps)(AddMovieForm);

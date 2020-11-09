@@ -4,7 +4,7 @@ import './App.css';
 import { connect } from 'react-redux';
 import HomeListPage from '../HomeListPage/HomeListPage';
 import DetailsPage from '../DetailsPage/DetailsPage';
-import AddMoviePage from '../AddMoviePage/AddMoviePage';
+import AddMoviePage from '../AddMovieForm/AddMovieForm';
 
 class App extends Component {
   // Renders the entire app on the DOM

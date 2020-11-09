@@ -19,7 +19,7 @@ routeDetailsPage = () => {
 
     render() {
         return (
-            <div>
+            <div className='movieItem'>
                 <h2>{this.props.movie.title}</h2>
                 <button onClick={this.submitMovieForDetails}><img src={this.props.movie.poster} alt={this.props.movie.title}></img><br></br>(click for more details)</button>
                 <br></br>
