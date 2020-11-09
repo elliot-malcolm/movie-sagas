@@ -13,14 +13,21 @@ componentDidMount(){
     this.displayMovies();
 }
 
+addMovie = () => {
+    this.props.history.push('/addmovie');
+}
+
     render() {
       return (
         <>  
-        {this.props.reduxState.movies.map((movie) => {
-            return (
-                <ul><MovieItem key={movie.id} movie={movie}/></ul>
-            )
-        })}
+        <ul>
+            {this.props.reduxState.movies.map((movie) => {
+                return (
+                    <li className='movieItem' key={movie.id}><MovieItem movie={movie}/></li>
+                )
+            })}
+        </ul>
+        <button onClick={this.addMovie}>Add A Movie!</button>
 
 
 
