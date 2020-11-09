@@ -55,3 +55,20 @@ VALUES
 ('Space-Opera'),
 ('Superhero');
 
+CREATE TABLE "movies_genres" (
+  "id" SERIAL PRIMARY KEY,
+  "movies_id" INT REFERENCES "movies",
+  "genres_id" INT REFERENCES "genres"
+);
+ 
+INSERT INTO “movies_genres” (“movies_id”, “genres_id”)
+Values (1,1), (1,8), (1,11), (2,2), (2,9), (3,8), (3,13), 
+(4,1), (4,2), (5,6), (6,7), (6,8), 
+(7,1), (7,10), (8,1), (8,8), (9,2), (9,4), (9,11), 
+(10,1), (10,7), (10,11), (11,5), (11,11), (12,3), (12,6), 
+(13,5), (13,6), (13,10), (14,2), (14,4);
+
+SELECT * FROM "movies"
+JOIN "movies.genre" ON "movies.id" = "movies_genre"."movies_id"
+JOIN "genres" ON "genres"."id" = "movies_genre"."genres_id"
+WHERE "movies"."id" = 1;
