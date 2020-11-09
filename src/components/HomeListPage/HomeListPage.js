@@ -18,7 +18,7 @@ componentDidMount(){
         <>  
         {this.props.reduxState.movies.map((movie) => {
             return (
-                <MovieItem key={movie.id} movie={movie}/>
+                <ul><MovieItem key={movie.id} movie={movie}/></ul>
             )
         })}
 

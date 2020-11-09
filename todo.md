@@ -1,10 +1,9 @@
 ToDo:
 
 Home/List Page
-    [] GET all movies in database with router route 
-        [] Saga to SET 
-    [] Button to route to "Details" page and 
-    [] Specify movie to GET Info for 
+    [x] GET all movies in database with router route 
+        [x] Saga to SET 
+    [x] Button to route to "Details" page and specify movie to GET Info for 
 
 Details Page
     [] GET Info for movie clicked

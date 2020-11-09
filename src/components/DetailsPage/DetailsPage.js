@@ -6,7 +6,7 @@ class DetailsPage extends Component {
     render() {
       return (
         <>  
-        
+        <p>details go here!</p>
         </>
       );
     };
