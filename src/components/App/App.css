@@ -1,7 +1,26 @@
 .App {
   text-align: center;
+  color: red;
+  margin:0; padding:0
 }
 
+html, body {
+  margin:0;
+  padding:0;
+  height: 100%;
+  background-color: pink;
+}
+h1 {
+  margin:0;
+}
+
+.movieItem {
+  color: red;
+}
+
+.itemBtn{
+  color: hotpink;
+}
 
 .App-header {
   background-color: #222;
@@ -23,8 +42,21 @@
   to { transform: rotate(360deg); }
 }
 
+titleInput{}
+
+genreInput{}
+
+descriptionInput{}
+
+posterInput{}
+
+.inputField{
+
+}
+
 .movieItem {
-  display: inline-block;
+  display: inline-block; 
+  flex: auto;
 }
 
 #addBtn {
@@ -36,10 +68,13 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    bottom: 90%;
+    bottom: 95%;
     left: 80%;
     position: sticky;
   }
 
   textarea { vertical-align: top; }
 
+  .AddMoviesForm {
+    background-color: green;
+  }

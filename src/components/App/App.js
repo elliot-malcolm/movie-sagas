@@ -14,7 +14,6 @@ class App extends Component {
         <h1>Movies!</h1>
         {/* <HomeListPage/> */}
         <Router>
-          {/* ADD PAGES! */}
           <Route exact path="/" component={HomeListPage}/>
           <Route path="/details" component={DetailsPage}/>
           <Route path="/addmovie" component={AddMoviePage}/>
